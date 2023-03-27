@@ -23,24 +23,27 @@ l.head.next = second
 l.length ++
 }
 
-func(l*LinkedList) deleteNode(int node){
-	if(node == l.head.data){
-		l.head.data = l.head.next.data
-		l.length --
 
-	}else{
-		for i:=0;i != l.length;i++{
-			if(l.head.next.data == n.data){
-			 l.head.next.data = l.head.next.next.data
-			 l.length --
-			}else{
-				fmt.Println("Node not found");
-
-			}
-		} 
-	 }
+func(l*LinkedList) DeleteNodeByValue(num int){
+	if(num == l.head.data){ 
+		l.head.data = l.head.next.data;
+		l.length --;
+	} else{
+		// check if element exists in list
+		for x :=0;x<l.length;x++{
+if(l.head.next.data == num){
+	l.head.data = l.head.next.data;
+	l.length --;
 
 }
+fmt.Println("Node not found");
+
+		}
+	
+	}
+
+}
+
 
 func(l LinkedList) PrintValues(){
 	toPrint := l.head
